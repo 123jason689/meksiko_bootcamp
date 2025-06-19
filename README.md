@@ -144,6 +144,3 @@ Follow these instructions to get a copy of the project up and running on your lo
 ## 📧 Contact
 
 **Project Author:** Jason Melvin Hartono
-
-  - **Submission Email:** vincent88tjong@gmail.com
-  - **Submission Form:** [Project Submission Link](https://bit.ly/PengumpulanFinalProjectBootcamp2024)
