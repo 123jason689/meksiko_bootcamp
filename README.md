@@ -1,74 +1,149 @@
-Back-End Development
- BNCC Pretorian Recruitement Bootcamp
+# Meksiko - Inventory Management & Invoicing System
 
-PT Meksiko telah merekrut kamu untuk bekerja di perusahaannya! Setelah melihat proyek kamu sebelumnya, Pak Raja senang dengan hasil kerjamu. Karena hal tersebut Pak Raja mempercayakan sebuah proyek kepada kamu. Proyek ini berupa aplikasi pendataan barang berbasis web yang digunakan sebagai website penjualan barang-barang. Berikut merupakan penjelasan spesifik mengenai fitur yang diinginkan oleh Pak Raja:
+![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-Proyek website yang harus dikerjakan oleh kamu adalah sebuah website aplikasi pendataan barang. Perpustakaan tersebut ingin website dengan fitur-fitur sebagai berikut:
-Pak Raja menginginkan adanya dua role di dalam aplikasi tersebut. Role pertama adalah admin. Admin dapat melakukan operasi Create, Read, Update, dan Delete terhadap barang-barang yang terdapat di website tersebut. Operasi tersebut sudah termasuk memasukkan gambar / foto barang. Berikut adalah data-data yang perlu dimasukkan ke dalam database:
-Kategori Barang, required string
-Nama Barang (minimal 5 huruf, maksimal 80 huruf), required string
-Harga Barang (harus dimulai dengan Rp. dari display-nya (HTML)), required integer
-Jumlah Barang (harus menggunakan angka), required integer
-Foto Barang 
-Untuk relationship-nya, buatlah minimal satu kategori barang dengan barang yang diinput.
-Role kedua adalah user. User bisa melihat semua barang, cetak faktur seperti struk barang. Pak Raja ingin tampilan aplikasi tersebut dapat menampilkan semua barang yang ada di database (sejenis katalog):
-Kategori Barang, required string
-Nama Barang (minimal 5 huruf, maksimal 80 huruf), required string
-Harga Barang (harus dimulai dengan Rp. dari displaynya (HTML)), required integer
-Jumlah Barang, (harus angka), required integer
-Foto Barang
-Button untuk memasukkan barang ke faktur (keranjang)
-Pada bagian faktur, Pak Raja ingin kalian membuat spesifikasi sesuai dengan yang di bawah ini:
-Buat page khusus untuk cetak faktur
-Generate Nomor Invoice (otomatis)
-Kategori Barang
-Nama barang dan kuantitas (contoh, Bakmi x12 dan jumlah dapat diatur sendiri)
-Alamat Pengiriman,(minimal 10 huruf, maksimal 100 huruf) (input sendiri), required string
-Kode Pos (harus 5 digit angka, pake string aja) (input sendiri), required integer
-Display subtotal harga setiap barang
-Display total harga semua barang (menggunakan rumus matematika)
-Simpan data faktur
-Selain itu, Pak Raja menginginkan adanya halaman Login dan Register untuk user biasa. Sedangkan untuk admin hanya dapat di registrasi secara manual (lewat database). Data-data yang terdapat di dalam database (user dan admin) akan memiliki bentuk seperti berikut ini:
-Data User Biasa:
-Nama Lengkap (Minimal  3 huruf, Maksimal 40 huruf), required string
-Email (harus mempunyai @gmail.com), required string
-Password (minimal 6 huruf, maksimal 12 huruf), required string
-Nomor Handphone (harus diawali dengan 08), required string
-Submit Button
-Data Admin:
-Nama Lengkap, required string
-ID Admin (1 admin saja dengan nama bebas), required string
-Email (format @gmail.com), required string
-Password (minimal 6 huruf, maksimal 12 huruf), required string
-Nomor HP (harus diawali dengan 08), required string
-Submit Button
-Pak Raja juga ingin menginginkan adanya validasi agar tidak diserang oleh perusahaan kompetitornya. Oleh karena itu, Pak Raja memberikan bagian-bagian yang perlu kalian perhatikan dalam pembuatan proyek ini.
-Kalau user biasa (role User) mencoba masuk ke page CRUD (Admin), maka ia akan di redirect ke halaman view barang user. (Middleware)
-Jika barang sudah habis, muncul validasi “Barang sudah habis, silakan tunggu hingga barang di-restock ulang” atau semacamnya.
-	
-Demikian kriteria dari website tersebut yang diberikan oleh Pak Raja.
-Pengumpulan Final Project paling lambat tanggal 2 September 2024
-pukul 23.59. Format pengumpulan project tersebut adalah sebagai
-berikut:
-- Dikirim ke Email pengajar [vincent88tjong@gmail.com] & Google
-Form [https://bit.ly/PengumpulanFinalProjectBootcamp2024]
-- Bentuk: link github dan link video demo website
-- Subject email: [Nama Lengkap]_Back-End
+Meksiko is a web-based inventory and sales data management application built with the Laravel framework. It provides a comprehensive solution for managing products, categories, and customer invoices. The system is designed with two distinct user roles: **Admin** for complete data management and **User** for Browse products and generating invoices.
 
-Contoh: Vannessa Lim_Back-End
+This project was developed as a final project for the **BNCC Praetorian Recruitment Bootcamp**.
 
-Komponen Penilaian:
-● Pengumpulan 10
-● Tampilan 5
-● CRUD
-○ Create 15
-○ Read 5
-○ Update 15
-○ Delete 5
-● Middleware 10
-● Auth 20
-● Relationship 5
-● Validasi 10
+-----
 
-fixes and improvement from the lnt_final
+## ✨ Key Features
 
+### Admin Role
+
+  - **Full CRUD Operations:** Admins can Create, Read, Update, and Delete products and product categories.
+  - **Product Management:** Add new products with details such as name, category, price, stock quantity, a descriptive text, and an image upload.
+  - **Category Management:** Create and delete product categories to organize the inventory.
+  - **Secure Access:** Admin pages are protected by middleware, preventing access by unauthorized users.
+
+### User Role
+
+  - **Product Catalog:** Users can view a complete, filterable catalog of all available products.
+  - **Out-of-Stock Handling:** The system displays a clear "Out of Stock" message for items with zero quantity.
+  - **Shopping Cart:** Users can add items to their cart (faktur) and adjust quantities.
+  - **Invoice Generation:** Generate a detailed invoice with a unique invoice number, customer details, product list, subtotal, and grand total.
+  - **PDF Invoices:** Download generated invoices as PDF files for printing or record-keeping.
+  - **Order History:** View a history of all past invoices and transactions.
+  - **Authentication:** Secure user registration and login functionality.
+
+-----
+
+## 🛠️ Tech Stack & Tools
+
+This project is built with a modern tech stack, ensuring robustness and scalability.
+
+| Technology | Badge |
+| :--- | :--- |
+| **Laravel** | ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) |
+| **PHP** | ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) |
+| **MySQL** | ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) |
+| **JavaScript** | ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) |
+| **Bootstrap** | ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) |
+| **HTML5** | ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) |
+| **CSS3** | ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) |
+| **DomPDF** | ![DomPDF](https://img.shields.io/badge/PDF%20Generation-DomPDF-red?style=for-the-badge) |
+| **Composer** | ![Composer](https://img.shields.io/badge/Composer-885610?style=for-the-badge&logo=composer&logoColor=white) |
+
+-----
+
+## 🚀 Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+  - **XAMPP:** A local server environment with Apache and MySQL.
+  - **PHP 8.0+**
+  - **Composer:** A dependency manager for PHP.
+  - **Node.js & NPM:** For managing front-end dependencies.
+
+### Installation
+
+1.  **Clone the Repository**
+
+    ```sh
+    git clone https://github.com/your-username/meksiko_bootcamp.git
+    cd meksiko_bootcamp
+    ```
+
+2.  **Install PHP Dependencies**
+    Use Composer to install all the required backend packages.
+
+    ```sh
+    composer install
+    ```
+
+3.  **Install JavaScript Dependencies**
+    Use NPM to install front-end packages.
+
+    ```sh
+    npm install
+    ```
+
+4.  **Set Up Environment File**
+
+      - Duplicate the `.env.example` file and rename it to `.env`.
+      - Open your XAMPP control panel and start the **Apache** and **MySQL** services.
+      - Open `phpMyAdmin` and create a new database. A good name would be `meksiko_db`.
+      - Update your `.env` file with your database credentials:
+        ```env
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=meksiko_db
+        DB_USERNAME=root
+        DB_PASSWORD=
+        ```
+
+5.  **Generate Application Key**
+    This key is used for encryption and is essential for security.
+
+    ```sh
+    php artisan key:generate
+    ```
+
+6.  **Run Database Migrations and Seed Data**
+    This command will create all necessary tables and populate the database with dummy data for products and categories.
+
+    ```sh
+    php artisan migrate --seed
+    ```
+
+7.  **Create Storage Link**
+    This makes the `storage/app/public` directory accessible from the web to display uploaded images.
+
+    ```sh
+    php artisan storage:link
+    ```
+
+8.  **Compile Front-end Assets**
+
+    ```sh
+    npm run dev
+    ```
+
+9.  **Start the Development Server**
+    Your project is now ready\! Start the Laravel server.
+
+    ```sh
+    php artisan serve
+    ```
+
+    You can now access the application at **[suspicious link removed]**.
+
+-----
+
+## 👤 Admin & User Accounts
+
+  - **Admin Account:** Per the project requirements, admin accounts must be created manually through the database. You can do this by adding a new user in the `users` table and then adding their `user_id` to the `admins` table.
+  - **User Account:** You can register a new user account directly from the application's `/register` page.
+
+-----
+
+## 📧 Contact
+
+**Project Author:** Jason Melvin Hartono
+
+  - **Submission Email:** vincent88tjong@gmail.com
+  - **Submission Form:** [Project Submission Link](https://bit.ly/PengumpulanFinalProjectBootcamp2024)
